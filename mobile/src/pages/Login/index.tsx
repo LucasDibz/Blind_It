@@ -19,7 +19,7 @@ const Login = () => {
       <Image source={logo} style={styles.logo} />
 
       <View style={styles.inputContainer}>
-        <Text style={styles.inputPlaceholder}>Usuario</Text>
+        <Text style={styles.inputPlaceholder}>Usuário</Text>
         <TextInput style={styles.input} />
 
         <Text style={styles.inputPlaceholder}>Senha</Text>

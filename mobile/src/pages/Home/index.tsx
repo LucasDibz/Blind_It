@@ -7,16 +7,22 @@ import {
   Animated,
   StyleSheet,
 } from "react-native";
+import { Avatar } from "react-native-elements";
 
 import styles from "./styles";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import { useNavigation } from "@react-navigation/native";
 
 interface User {
   avatar_url: string;
 }
 
 const Home = () => {
-  const companyLogos = [1, 200, 300, 400, 500];
+  //Todo - Fix companies
+  const companies = [1, 200, 300, 400, 500];
+
+  const navigator = useNavigation();
+
   const [user, setUser] = useState<User>();
 
   //Get User Information
@@ -34,9 +40,10 @@ const Home = () => {
     >
       {/* Profile Ballon */}
       <View style={styles.ballon}>
-        <View style={styles.profileBallon}>
-          <Image
-            style={styles.profileImg}
+        <View style={styles.profileContainer}>
+          <Avatar
+            size="large"
+            rounded
             source={{
               uri: user
                 ? user.avatar_url
@@ -66,7 +73,10 @@ const Home = () => {
           </View>
         </View>
         <View style={styles.profileSeparator} />
-        <Text style={styles.profileHint}>
+        <Text
+          style={styles.profileHint}
+          onPress={() => navigator.navigate("Profile")}
+        >
           Adicione mais competências para aumentar a quantidade de vagas
           disponíveis!
         </Text>
@@ -81,6 +91,7 @@ const Home = () => {
             showsVerticalScrollIndicator={false}
             style={styles.recommendedJobsList}
           >
+            {/* todo-Fix Jobs List */}
             <Text style={styles.recommendedJobsTitle}>
               Analista de sistemas junior - IBM
             </Text>
@@ -97,7 +108,12 @@ const Home = () => {
             <Text style={styles.recommendedJobsTitle}>DevOps - AMBEV</Text>
           </ScrollView>
         </View>
-        <Text style={styles.ballonLink}>ver mais</Text>
+        <Text
+          style={styles.ballonLink}
+          onPress={() => navigator.navigate("Jobs")}
+        >
+          ver mais
+        </Text>
       </View>
 
       {/* Companies Ballon */}
@@ -109,7 +125,7 @@ const Home = () => {
             showsHorizontalScrollIndicator={false}
             contentContainerStyle={{ paddingHorizontal: 10 }}
           >
-            {companyLogos.map((companyLogo) => (
+            {companies.map((companyLogo) => (
               <TouchableOpacity key={companyLogo}>
                 <Image
                   style={styles.companyImg}

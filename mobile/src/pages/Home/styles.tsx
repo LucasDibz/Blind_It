@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     marginTop: 30,
   },
 
-  profileBallon: {
+  profileContainer: {
     flexDirection: "row",
     width: "100%",
     marginTop: 10,
@@ -25,16 +25,8 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
   },
 
-  profileImg: {
-    width: 70,
-    height: 70,
-    borderRadius: 35,
-  },
-
   profileStatus: {
     alignItems: "center",
-    //?
-    //margin: 10,
   },
 
   profileText: {
@@ -62,7 +54,6 @@ const styles = StyleSheet.create({
     color: "#386692",
     fontSize: 11,
     margin: 10,
-    //?
     paddingLeft: 30,
   },
 

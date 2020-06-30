@@ -2,6 +2,8 @@ import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import Home from "./pages/Home";
+import Profile from "./pages/Profile";
+import Jobs from "./pages/Jobs";
 
 const Tab = createBottomTabNavigator();
 
@@ -25,10 +27,18 @@ const Tabs = () => {
         inactiveTintColor: "gray",
       }}
     >
-      <Tab.Screen name="Home" component={Home} />
-      <Tab.Screen name="Perfil" component={Home} />
-      <Tab.Screen name="Vagas" component={Home} />
-      <Tab.Screen name="Inscrições" component={Home} />
+      <Tab.Screen name="Home" component={Home} options={{ title: "Home" }} />
+      <Tab.Screen
+        name="Profile"
+        component={Profile}
+        options={{ title: "Perfil" }}
+      />
+      <Tab.Screen name="Jobs" component={Jobs} options={{ title: "Vagas" }} />
+      <Tab.Screen
+        name="History"
+        component={Home}
+        options={{ title: "Inscrições" }}
+      />
     </Tab.Navigator>
   );
 };
