@@ -32,7 +32,7 @@ const Login = () => {
 
       <View style={styles.linksContainer}>
         <Text style={styles.linksText}>Esqueci minha senha</Text>
-        <Text style={styles.linksText}>Cadastrar</Text>
+        <Text style={styles.linksText} onPress={ () => navigation.navigate("Register")}>Cadastrar</Text>
       </View>
     </View>
   );
