@@ -1,10 +1,10 @@
-import React from "react";
-import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
-import Login from "./pages/Login";
-import Tabs from "./tabs";
-import Register from "./pages/Register";
+import Login from './pages/Login';
+import Tabs from './tabs';
+import Register from './pages/Register';
 
 const RootStack = createStackNavigator();
 

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 import {
   View,
   ScrollView,
@@ -6,12 +6,12 @@ import {
   Image,
   Animated,
   StyleSheet,
-} from "react-native";
-import { Avatar } from "react-native-elements";
+} from 'react-native';
+import { Avatar } from 'react-native-elements';
 
-import styles from "./styles";
-import { TouchableOpacity } from "react-native-gesture-handler";
-import { useNavigation } from "@react-navigation/native";
+import styles from './styles';
+import { TouchableOpacity } from 'react-native-gesture-handler';
+import { useNavigation } from '@react-navigation/native';
 
 interface User {
   avatar_url: string;
@@ -27,7 +27,7 @@ const Home = () => {
 
   //Get User Information
   useEffect(() => {
-    fetch("https://api.github.com/users/lucasdibz").then((res) =>
+    fetch('https://api.github.com/users/lucasdibz').then((res) =>
       res.json().then((res) => setUser(res))
     );
   }, []);
@@ -35,7 +35,7 @@ const Home = () => {
   return (
     <ScrollView
       style={styles.container}
-      contentContainerStyle={{ alignItems: "center" }}
+      contentContainerStyle={{ alignItems: 'center' }}
       showsVerticalScrollIndicator={false}
     >
       {/* Profile Ballon */}
@@ -47,7 +47,7 @@ const Home = () => {
             source={{
               uri: user
                 ? user.avatar_url
-                : "https://miro.medium.com/max/1080/0*DqHGYPBA-ANwsma2.gif",
+                : 'https://miro.medium.com/max/1080/0*DqHGYPBA-ANwsma2.gif',
             }}
           />
           <View style={styles.profileStatus}>
@@ -57,14 +57,14 @@ const Home = () => {
                 style={
                   (StyleSheet.absoluteFill,
                   {
-                    position: "absolute",
+                    position: 'absolute',
                     left: 0,
                     right: 0,
                     top: 0,
                     bottom: 0,
                     borderRadius: 25,
-                    backgroundColor: "#000",
-                    width: "70%", //Mudar Progresso da Barra
+                    backgroundColor: '#000',
+                    width: '70%', //Mudar Progresso da Barra
                   })
                 }
               />
@@ -75,7 +75,7 @@ const Home = () => {
         <View style={styles.profileSeparator} />
         <Text
           style={styles.profileHint}
-          onPress={() => navigator.navigate("Profile")}
+          onPress={() => navigator.navigate('Profile')}
         >
           Adicione mais competências para aumentar a quantidade de vagas
           disponíveis!
@@ -110,7 +110,7 @@ const Home = () => {
         </View>
         <Text
           style={styles.ballonLink}
-          onPress={() => navigator.navigate("Jobs")}
+          onPress={() => navigator.navigate('Jobs')}
         >
           ver mais
         </Text>

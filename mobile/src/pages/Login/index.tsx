@@ -1,17 +1,17 @@
-import React from "react";
-import { useNavigation } from "@react-navigation/native";
-import { View, Image, Text, TextInput, TouchableOpacity } from "react-native";
+import React from 'react';
+import { useNavigation } from '@react-navigation/native';
+import { View, Image, Text, TextInput, TouchableOpacity } from 'react-native';
 
-import styles from "./styles";
+import styles from './styles';
 
-const logo = require("../../../assets/logo.png");
+const logo = require('../../../assets/logo.png');
 
 const Login = () => {
   const navigation = useNavigation();
 
   function handleLogin() {
     //Checar Login
-    navigation.navigate("Home");
+    navigation.navigate('Home');
   }
 
   return (
@@ -32,7 +32,12 @@ const Login = () => {
 
       <View style={styles.linksContainer}>
         <Text style={styles.linksText}>Esqueci minha senha</Text>
-        <Text style={styles.linksText} onPress={ () => navigation.navigate("Register")}>Cadastrar</Text>
+        <Text
+          style={styles.linksText}
+          onPress={() => navigation.navigate('Register')}
+        >
+          Cadastrar
+        </Text>
       </View>
     </View>
   );
