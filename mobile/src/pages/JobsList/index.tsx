@@ -63,11 +63,15 @@ const Jobs = () => {
     },
   ];
 
-  const navigator = useNavigation();
+  const navigation = useNavigation();
 
   function renderJobs(job: Job) {
     return (
-      <TouchableOpacity style={styles.ballon} activeOpacity={0.7}>
+      <TouchableOpacity
+        style={styles.ballon}
+        activeOpacity={0.7}
+        onPress={() => navigation.navigate('JobDetail')}
+      >
         <View style={styles.avatarContainer}>
           <Avatar
             size="large"

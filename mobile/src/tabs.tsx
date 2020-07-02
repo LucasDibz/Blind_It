@@ -3,7 +3,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import Home from './pages/Home';
 import Profile from './pages/Profile';
-import Jobs from './pages/Jobs';
+import Jobs from './pages/JobsList';
 
 const Tab = createBottomTabNavigator();
 

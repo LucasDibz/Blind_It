@@ -36,7 +36,10 @@ const Profile = () => {
       </View>
 
       {/* Inputs */}
-      <ScrollView>
+      <ScrollView
+        contentContainerStyle={{ paddingBottom: 50 }}
+        showsVerticalScrollIndicator={false}
+      >
         {/* Name */}
         <Text style={styles.label}>Nome:</Text>
         <TextInput
