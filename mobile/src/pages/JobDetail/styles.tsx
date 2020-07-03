@@ -20,6 +20,13 @@ export default StyleSheet.create({
     fontFamily: 'Ubuntu_700Bold',
     fontSize: 24,
     color: '#fff',
+
+    textShadowColor: '#000',
+    textShadowRadius: 5.5,
+    textShadowOffset: {
+      width: 0,
+      height: 1.8,
+    },
   },
   jobContainer: {
     backgroundColor: '#ddd',

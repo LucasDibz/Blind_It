@@ -1,8 +1,10 @@
-import React from 'react';
-import { View, Text, TouchableOpacity, ScrollView } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
-import { Avatar } from 'react-native-elements';
+import React, { useState, useCallback, useEffect } from 'react';
+import { View, Text } from 'react-native';
 import { MaterialIcons as Icon } from '@expo/vector-icons';
+import { Avatar } from 'react-native-elements';
+import { useNavigation } from '@react-navigation/native';
+
+import { GiftedChat } from 'react-native-gifted-chat';
 
 import styles from './styles';
 
@@ -17,8 +19,18 @@ interface Job {
   location: string;
 }
 
-const JobDetail = () => {
-  //Todo - Fix Job - pegar do DB
+interface Message {
+  _id: number;
+  text: string;
+  createdAt: Date;
+  user: {
+    _id: number;
+    name: string;
+    avatar: string;
+  };
+}
+
+const Chat = () => {
   const job: Job = {
     id: 1,
     logo: 1,
@@ -32,7 +44,30 @@ const JobDetail = () => {
     location: 'São Paulo',
   };
 
+  const [messages, setMessages] = useState<Message[]>([]);
+
   const navigation = useNavigation();
+
+  useEffect(() => {
+    setMessages([
+      {
+        _id: 1,
+        text: 'Olá Candidato 1337!',
+        createdAt: new Date(),
+        user: {
+          _id: 2,
+          name: 'React Native',
+          avatar: 'https://picsum.photos/200/200',
+        },
+      },
+    ]);
+  }, []);
+
+  const onSend = useCallback((messages = []) => {
+    setMessages((previousMessages) =>
+      GiftedChat.append(previousMessages, messages)
+    );
+  }, []);
 
   return (
     <View style={styles.container}>
@@ -53,43 +88,16 @@ const JobDetail = () => {
         <Text style={styles.companyName}>{job.company}</Text>
       </View>
 
-      <ScrollView
-        style={styles.jobContainer}
-        contentContainerStyle={{ paddingBottom: 50 }}
-        showsVerticalScrollIndicator={false}
-      >
-        <Text style={styles.topic}>Cargo:</Text>
-        <View style={[styles.buttonContainer, { margin: 0 }]}>
-          <Text style={styles.jobInfo}>{job.title}</Text>
-
-          <TouchableOpacity style={styles.button}>
-            <Text style={styles.buttonText}>Baixar Teste</Text>
-          </TouchableOpacity>
-        </View>
-
-        <Text style={styles.topic}>Requisitos:</Text>
-        <Text style={styles.jobInfo}>{job.requirements}</Text>
-
-        <Text style={styles.topic}>Descrição:</Text>
-        <Text style={styles.jobInfo}>{job.description}</Text>
-
-        <Text style={styles.topic}>Benefícios:</Text>
-        <Text style={styles.jobInfo}>{job.benefits}</Text>
-
-        <View style={styles.buttonContainer}>
-          <TouchableOpacity
-            style={styles.button}
-            onPress={() => navigation.navigate('Chat')}
-          >
-            <Text style={styles.buttonText}>Chat</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.button}>
-            <Text style={styles.buttonText}>Enviar Teste</Text>
-          </TouchableOpacity>
-        </View>
-      </ScrollView>
+      <GiftedChat
+        messages={messages}
+        onSend={(messages) => onSend(messages)}
+        user={{
+          _id: 1,
+        }}
+        messagesContainerStyle={{ backgroundColor: '#14213D' }}
+      />
     </View>
   );
 };
 
-export default JobDetail;
+export default Chat;
