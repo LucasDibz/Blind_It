@@ -10,11 +10,10 @@ It's an application for recruiting people based only on their professional skill
 
 ### Prerequisites
 
-```
-NodeJs - https://nodejs.org/
-Expo - https://expo.io/
-Android/iOS Emulator or Physical Device
-```
+* [NodeJs](https://nodejs.org/)
+* [Expo](https://expo.io/)
+* [Android](https://developer.android.com/studio)/[iOS](https://developer.apple.com/xcode/) Emulator or Physical Device
+
 
 ### Installing
 
@@ -45,10 +44,5 @@ npm start --prefix mobile
 
 ## Authors
 
-* **Lucas Dib** - [Lucas Dibz](https://github.com/LucasDibz)
-* **Leonardo Santos** - [Leonardo Santos](https://github.com/Leonnard19)
-
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+* **[Lucas Dib](https://github.com/LucasDibz)**
+* **[Leonardo Santos](https://github.com/Leonnard19)**
