@@ -15,7 +15,7 @@ class UsersController {
     try {
       const dbUser = await knex('users')
         .select('ds_senha')
-        .where({ ds_email: email })
+        .where('ds_email', email)
         .first();
 
       //Todo - fix invalid login
@@ -65,7 +65,7 @@ class UsersController {
   update = async (request: Request, response: Response) => {
     const { id } = request.params;
 
-    const user = await knex('users').select().where({ id: id }).first();
+    const user = await knex('users').select().where('id', id).first();
 
     const updatedUser = { ...user, ...request.body };
 

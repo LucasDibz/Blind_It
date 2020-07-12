@@ -31,6 +31,26 @@ class CompaniesController {
 
     return response.json(companies);
   };
+
+  update = async (request: Request, response: Response) => {
+    const { id } = request.params;
+
+    const company = await knex('companies').select().where('id', id).first();
+
+    const updatedCompany = { ...company, ...request.body };
+
+    await knex('companies').where('id', id).update(updatedCompany);
+
+    return response.json(updatedCompany);
+  };
+
+  delete = async (request: Request, response: Response) => {
+    const { id } = request.params;
+
+    await knex('companies').where('id', id).delete();
+
+    return response.status(204).send();
+  };
 }
 
 export default CompaniesController;
