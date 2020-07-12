@@ -4,7 +4,7 @@
 
 # Blind It
 
-Blind It is my FIAP - N2020 and Startup One project.
+Blind It is our [FIAP](https://www.fiap.com.br/) - N2020 and Startup One project.
 
 It's an application for recruiting people based only on their professional skills, personal information will be kept private, removing Racism, Homophobie, Sexism or any kind of Prejudice towards the candidate.
 
