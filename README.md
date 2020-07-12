@@ -6,7 +6,7 @@
 
 Blind It is our [FIAP](https://www.fiap.com.br/) - N2020 and Startup One project.
 
-It's an application for recruiting people based only on their professional skills, personal information will be kept private, removing Racism, Homophobie, Sexism or any kind of Prejudice towards the candidate.
+It's an application developed with [React-Native](https://reactnative.dev/) for recruiting people based only on their professional skills, personal information will be kept private, removing Racism, Homophobie, Sexism or any kind of Prejudice towards the candidate.
 
 ### Prerequisites
 
@@ -38,8 +38,9 @@ npm start --prefix mobile
 
 ## Built With
 
-* [TypeScript](https://www.typescriptlang.org/) - JavaScript that scales. 
-* [Expo](https://expo.io/) - The fastest way to build an app
+* [TypeScript](https://www.typescriptlang.org/) - JavaScript that scales.
+* [Expo](https://expo.io/) - The fastest way to build an app.
+* [React-Native](https://reactnative.dev/) - Learn once, write anywhere.
 
 
 ## Authors
