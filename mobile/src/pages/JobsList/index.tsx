@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
-import { View, FlatList, Text } from "react-native";
-import { Avatar, SearchBar } from "react-native-elements";
+import React, { useState, useEffect } from 'react';
+import { View, FlatList, Text } from 'react-native';
+import { Avatar, SearchBar } from 'react-native-elements';
 
-import styles from "./styles";
-import { TouchableOpacity } from "react-native-gesture-handler";
-import { useNavigation } from "@react-navigation/native";
+import styles from './styles';
+import { TouchableOpacity } from 'react-native-gesture-handler';
+import { useNavigation } from '@react-navigation/native';
 
 //todo - Fix Types
 interface Job {
@@ -22,52 +22,56 @@ const Jobs = () => {
     {
       id: 1,
       logo: 1,
-      company: "IBM",
-      title: "Analista Jr.",
-      location: "São Paulo",
+      company: 'IBM',
+      title: 'Analista Jr.',
+      location: 'São Paulo',
     },
     {
       id: 2,
       logo: 10,
-      company: "FIAP",
-      title: "Estagiário",
-      location: "São Paulo",
+      company: 'FIAP',
+      title: 'Estagiário',
+      location: 'São Paulo',
     },
     {
       id: 3,
       logo: 20,
-      company: "FIAP",
-      title: "Desenvolvedor Jr.",
-      location: "São Paulo",
+      company: 'FIAP',
+      title: 'Desenvolvedor Jr.',
+      location: 'São Paulo',
     },
     {
       id: 4,
       logo: 40,
-      company: "FIAP",
-      title: "Desenvolvedor Pleno",
-      location: "São Paulo",
+      company: 'FIAP',
+      title: 'Desenvolvedor Pleno',
+      location: 'São Paulo',
     },
     {
       id: 5,
       logo: 80,
-      company: "AMBEV",
-      title: "Desenvolvedor Jr.",
-      location: "São Paulo",
+      company: 'AMBEV',
+      title: 'Desenvolvedor Jr.',
+      location: 'São Paulo',
     },
     {
       id: 6,
       logo: 160,
-      company: "Z-TECH",
-      title: "Desenvolvedor",
-      location: "São Paulo",
+      company: 'Z-TECH',
+      title: 'Desenvolvedor',
+      location: 'São Paulo',
     },
   ];
 
-  const navigator = useNavigation();
+  const navigation = useNavigation();
 
   function renderJobs(job: Job) {
     return (
-      <TouchableOpacity style={styles.ballon} activeOpacity={0.7}>
+      <TouchableOpacity
+        style={styles.ballon}
+        activeOpacity={0.7}
+        onPress={() => navigation.navigate('JobDetail')}
+      >
         <View style={styles.avatarContainer}>
           <Avatar
             size="large"

@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   View,
   Text,
@@ -6,25 +6,25 @@ import {
   Image,
   ScrollView,
   TouchableOpacity,
-} from "react-native";
+} from 'react-native';
 
-import styles from "./styles";
-import { useNavigation } from "@react-navigation/native";
+import styles from './styles';
+import { useNavigation } from '@react-navigation/native';
 
-const logo = require("../../../assets/logo.png");
+const logo = require('../../../assets/logo.png');
 
 const Register = () => {
   const navigation = useNavigation();
 
   //Todo - Fix Cadastrar
   function cadastrar() {
-    navigation.navigate("Home");
+    navigation.navigate('Home');
   }
 
   return (
     <View style={styles.container}>
       <ScrollView
-        contentContainerStyle={{ alignItems: "center", paddingBottom: 50 }}
+        contentContainerStyle={{ alignItems: 'center', paddingBottom: 50 }}
         showsVerticalScrollIndicator={false}
       >
         <Image style={styles.logo} source={logo} />
@@ -38,15 +38,15 @@ const Register = () => {
           {/* Birthday Input */}
           <View>
             <Text style={styles.inputTitle}>Nascimento</Text>
-            <TextInput style={[styles.input, { width: 125 }]} />
+            <TextInput style={[styles.input, { width: 130 }]} />
           </View>
 
           {/* Genre Input */}
           <View>
-            <Text style={[styles.inputTitle, { marginLeft: "30%" }]}>
+            <Text style={[styles.inputTitle, { marginLeft: '30%' }]}>
               Gênero
             </Text>
-            <TextInput style={[styles.input, { width: 125 }]} />
+            <TextInput style={[styles.input, { width: 135 }]} />
           </View>
         </View>
 
