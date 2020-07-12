@@ -1,4 +1,6 @@
-![alt text](https://github.com/LucasDibz/Blind_It/blob/master/logo.png?raw=true)
+<p align="center">
+  <img src="https://github.com/LucasDibz/Blind_It/blob/master/logo.png?raw=true">
+</p>
 
 # Blind It
 
